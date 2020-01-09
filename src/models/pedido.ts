@@ -5,6 +5,6 @@ export class Pedido {
     id!: number;
     idUsuario!: number;
     fecha!: Date;
-    pizzas!: Pizza[];
+    pizzas!: number[];
     importe!: number;
 };

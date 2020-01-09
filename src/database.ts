@@ -22,7 +22,11 @@ export abstract class database {
   }
 
   public static nextPedidoId(): number {
-    return Math.max.apply(Math, this.pedidos.map(function(o) { return o.id; }))
+    let result = 0;
+    if (this.pedidos.length !== 0) {
+      result = Math.max.apply(Math, this.pedidos.map(function(o) { return o.id; })) + 1;
+    }     
+    return result;
   }
 
 }

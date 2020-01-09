@@ -5,8 +5,10 @@ import {getPedidos, createPedido, deletePedido, updatePedido} from '../controlle
 
 router.route('/')
     .get(getPedidos)
-    .post(createPedido)
+    .post(createPedido);
+
+router.route('/:idPedido')
     .put(updatePedido)
-    .delete(deletePedido);
+    .delete(deletePedido)
 
 export default router;
