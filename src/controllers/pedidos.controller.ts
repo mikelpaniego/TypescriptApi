@@ -24,6 +24,7 @@ export function deletePedido (req: Request, res: Response): Response {
         return res.json('Bad Request');
     } else {
         database.pedidos = database.pedidos.filter(obj => obj !== oldPedido);
+        console.log('Envío de correo usando nodemailer');
         return res.json({message: 'Pedido eliminado'});
     }    
 }
@@ -40,6 +41,7 @@ export function updatePedido (req: Request, res: Response): Response {
         newPedido.fecha = new Date();
         database.pedidos = database.pedidos.filter(obj => obj !== oldPedido);
         database.pedidos.push(newPedido);
+        console.log('Envío de correo usando nodemailer');
         return res.json({message: 'Pedido modificado'});
     }
     
